@@ -76,6 +76,10 @@ def train(
         mlflow.log_metric("accuracy", acc)
         mlflow.log_metric("f1_score", f1)
         mlflow.sklearn.log_model(model, "model")
+        
+        # Log artifacts (Bonus 2 & 3)
+        mlflow.log_artifact("outputs/report.txt")
+        mlflow.log_artifact("outputs/metrics.json")
 
         print(f"[{model_type}] Accuracy: {acc:.4f} | F1: {f1:.4f}")
 

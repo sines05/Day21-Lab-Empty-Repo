@@ -161,3 +161,4 @@ jobs:
             sudo systemctl restart mlops-serve
             sleep 15
             curl -f http://localhost:8000/health || exit 1
+          debug: true

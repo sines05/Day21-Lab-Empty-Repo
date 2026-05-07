@@ -1,0 +1,15 @@
+Model: gradient_boosting
+Confusion Matrix:
+[118, 51, 4]
+[63, 145, 19]
+[3, 53, 44]
+
+Precision per class:
+Class 0: 0.6413
+Class 1: 0.5823
+Class 2: 0.6567
+
+Recall per class:
+Class 0: 0.6821
+Class 1: 0.6388
+Class 2: 0.4400

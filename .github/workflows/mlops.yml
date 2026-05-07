@@ -116,8 +116,8 @@ jobs:
           new_accuracy = float("${{ needs.train.outputs.accuracy }}")
           print(f"New Model Accuracy: {new_accuracy}")
           
-          if new_accuracy < 0.50:
-              print(f"FAILED: New accuracy {new_accuracy} is below threshold 0.50")
+          if new_accuracy < 0.70:
+              print(f"FAILED: New accuracy {new_accuracy} is below threshold 0.70")
               sys.exit(1)
               
           bucket_name = "${{ secrets.CLOUD_BUCKET }}"

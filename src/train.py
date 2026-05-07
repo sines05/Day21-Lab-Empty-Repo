@@ -77,12 +77,6 @@ def train(
         mlflow.log_metric("f1_score", f1)
         mlflow.sklearn.log_model(model, "model")
         
-        # Log artifacts (Bonus 2 & 3)
-        mlflow.log_artifact("outputs/report.txt")
-        mlflow.log_artifact("outputs/metrics.json")
-
-        print(f"[{model_type}] Accuracy: {acc:.4f} | F1: {f1:.4f}")
-
         # Metrics for CI/CD
         with open("outputs/metrics.json", "w") as f:
             json.dump({
@@ -90,6 +84,10 @@ def train(
                 "f1_score": f1,
                 "label_distribution": distribution
             }, f, indent=2)
+
+        # Log artifacts (Bonus 2 & 3) - Phải log SAU KHI file đã được ghi xong
+        mlflow.log_artifact("outputs/report.txt")
+        mlflow.log_artifact("outputs/metrics.json")
 
         os.makedirs("models", exist_ok=True)
         joblib.dump(model, "models/model.pkl")

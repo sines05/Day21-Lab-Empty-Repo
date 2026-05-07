@@ -29,6 +29,17 @@ Mô hình tốt nhất hiện tại sử dụng thuật toán **Gradient Boostin
 - `max_depth`: 5
 - **Accuracy đạt được: 0.7160** (Vượt ngưỡng yêu cầu 0.70).
 
+## 📊 Hình Ảnh Minh Chứng
+
+### 1. Pipeline CI/CD hoàn thành (4 Jobs Green)
+![GitHub Actions Workflow](docs/screenshots/step2-github-actions-green.png)
+
+### 2. Theo dõi thí nghiệm và Artifacts trên MLflow
+![MLflow Tracking](docs/screenshots/step1-mlflow-tracking-artifacts.png)
+
+### 3. Kết quả dự đoán từ API (Inference)
+![API Prediction Result](docs/screenshots/step2-prediction-curl-result.png)
+
 ## 🛠 Hướng Dẫn Sử Dụng
 
 ### 1. Cài đặt môi trường

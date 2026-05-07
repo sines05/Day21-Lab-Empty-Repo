@@ -11,7 +11,9 @@ Dựa trên kết quả thực nghiệm tại Bước 1, tôi đã quyết đị
 - `learning_rate`: 0.1
 
 **Lý do lựa chọn:**
-Qua quá trình Grid Search thủ công, tôi nhận thấy bộ dữ liệu Wine Quality có các mối quan hệ phi tuyến tính phức tạp. Thuật toán Gradient Boosting với 200 cây và độ sâu 5 giúp mô hình học được các đặc trưng này tốt hơn, đẩy độ chính xác (Accuracy) từ mức ~0.60 (của RandomForest) lên **0.7160**, vượt qua ngưỡng yêu cầu **0.70** của bài Lab.
+Qua quá trình Grid Search thủ công, tôi nhận thấy bộ dữ liệu Wine Quality có các mối quan hệ phi tuyến tính phức tạp. Thuật toán Gradient Boosting với 200 cây và độ sâu 5 giúp mô hình học được các đặc trưng này tốt hơn, đẩy độ chính xác (Accuracy) từ mức ~0.60 (của RandomForest) lên- **Accuracy đạt được: 0.7160** (Vượt ngưỡng yêu cầu 0.70).
+
+![MLflow Artifacts](docs/screenshots/step1-mlflow-tracking-artifacts.png)
 
 ---
 
@@ -32,7 +34,11 @@ Trong quá trình thực hiện, tôi đã gặp một số thách thức kỹ t
 - **Vấn đề:** Sau khi nạp thêm dữ liệu ở Bước 3, Accuracy ban đầu chỉ đạt ~0.65, khiến job Deploy bị chặn.
 - **Giải quyết:** Tôi đã thực hiện tối ưu hóa siêu tham số (Hyperparameter Tuning) ngay trên môi trường local bằng `.venv`, tăng số lượng cây huấn luyện và điều chỉnh độ sâu, giúp mô hình đạt chỉ số an toàn để vượt qua "cổng kiểm soát" tự động.
 
+![GitHub Actions Success](docs/screenshots/step2-github-actions-green.png)
+
 ---
 
 ## 3. Kết Luận
-Hệ thống đã hoạt động ổn định với đầy đủ các thành phần: Quản lý phiên bản dữ liệu (DVC), Theo dõi thí nghiệm (MLflow), Pipeline tự động (GitHub Actions) và API phục vụ (FastAPI). Toàn bộ mã nguồn và minh chứng đã được tổ chức gọn gàng trong repository.
+Hệ thống đã hoạt động ổn định với đầy đủ các thành phần: Quản lý phiên bản dữ liệu (DVC), Theo dõi thí nghiệm (MLflow), Pipeline tự động (GitHub Actions) và API phục vụ (FastAPI). Kết quả dự đoán thực tế đã được xác nhận qua lệnh `curl`.
+
+![Prediction Result](docs/screenshots/step2-prediction-curl-result.png)

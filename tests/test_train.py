@@ -1,4 +1,6 @@
 import os
+os.environ["MLFLOW_TRACKING_URI"] = "sqlite:///mlflow.db"
+
 import json
 import numpy as np
 import pandas as pd
